@@ -1,6 +1,6 @@
 #include "MyClass.h"
 
-void main()
+int main()
 {
 
 }

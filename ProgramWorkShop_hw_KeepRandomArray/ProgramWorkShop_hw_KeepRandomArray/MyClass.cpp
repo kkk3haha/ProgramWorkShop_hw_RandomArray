@@ -2,3 +2,7 @@
 
 #include <vector>
 
+RandomArray::RandomArray(int Num)
+{
+	
+}
