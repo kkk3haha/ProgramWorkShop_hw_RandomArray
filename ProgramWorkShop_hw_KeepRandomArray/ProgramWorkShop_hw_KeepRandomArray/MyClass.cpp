@@ -5,12 +5,6 @@
 #include <iostream>
 
 
-
-RandomArray::RandomArray()
-{
-	
-}
-
 void RandomArray::AddArray(int _NumOfArray)
 {
 	for (int i = 0; i < _NumOfArray; i++) 

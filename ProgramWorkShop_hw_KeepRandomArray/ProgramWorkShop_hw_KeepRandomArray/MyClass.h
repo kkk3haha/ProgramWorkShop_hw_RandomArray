@@ -19,7 +19,7 @@ private:
 	std::uniform_int_distribution<> rand100;
 
 public:
-	RandomArray();
+	~RandomArray() { std::vector<int>().swap(m_array); };
 	void AddArray(int _NumOfArray);
 	void InitializeRandomTable();
 	void CalculateAverage();
