@@ -15,10 +15,12 @@ int main()
 	bool isValidInput = false;
 	int InputNum = 0;
 
-	RandomArray randomArray;
+	RandomArray *randomArray;
 	Action action = Action_PointAtIndexFromArray;
 
-	randomArray.InitializeRandomTable();
+	randomArray = new RandomArray;
+
+	randomArray->InitializeRandomTable();
 	
 	while (!isValidInput)
 	{
@@ -29,7 +31,7 @@ int main()
 		if (InputNum > 0)
 		{
 			isValidInput = true;
-			randomArray.AddArray(InputNum);
+			randomArray->AddArray(InputNum);
 			std::cout << "確保に成功しました。\n";
 		}
 		else
@@ -64,23 +66,26 @@ int main()
 			int InputIndex;
 			std::cout << "指定するインデックス ->";
 			std::cin >> InputIndex;
-			std::cout <<"インデックス:"<<InputIndex<< randomArray.ShowArrayIndex(InputIndex);
+			std::cout <<"インデックス:"<<InputIndex<< randomArray->ShowArrayIndex(InputIndex);
 			break;
 
 		case Action_AllArray:
-			randomArray.ShowArrayAll();
+			randomArray->ShowArrayAll();
 			break;
 
 		case Action_AverageOfArray:
-			randomArray.CalculateAverage();
-			randomArray.ShowArrayAvarage();
+			randomArray->CalculateAverage();
+			randomArray->ShowArrayAvarage();
 			break;
 
 		case Action_ResetArray :
-			randomArray.ResetArray();
+			randomArray->ResetArray();
 			break;
 
 		}
 	}
+
+	delete randomArray;
+
 	return 0;
 }
